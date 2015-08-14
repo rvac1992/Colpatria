@@ -1,0 +1,140 @@
+{% extends '::base.html.twig' %}
+	 
+	 {% block body %}
+
+	
+
+	{{form_start(form)}}
+	
+
+ <form id="flogin" method="post" action="javascript:ComprobarPyme()">
+				<table class='table table-bordered'>
+							 <tr id="trNit">
+							 	<td>
+							 		NIT de la empresa:
+							 	</td>
+							 	<td>
+							 		{{form_widget(form.nit)}}
+							 	</td>
+							 </tr>
+							 <tr>
+							 	<td>
+							 		Primer nombre:
+							 	</td>
+							 	<td>
+							 		{{form_widget(form.primerNombre)}}
+							 	</td>
+
+							 </tr>
+							 <tr>
+							 	<td>
+							 		Primer apellido:
+							 	</td>
+							 	<td>
+							 		{{form_widget(form.primerApellido)}}
+							 	</td>
+
+							 </tr>
+							 <tr>
+							 	<td>
+							 		Segundo nombre:
+							 	</td>
+							 	<td>
+							 		{{form_widget(form.segundoNombre)}}
+							 	</td>
+
+							 </tr>
+							 <tr>
+							 	<td>
+							 		Segundo apellido:
+							 	</td>
+							 	<td>
+							 		{{form_widget(form.segundoApellido)}}
+							 	</td>
+							 </tr>
+							 <tr>
+							 	<td>
+							 		Teléfono fijo:
+							 	</td>
+							 	<td>
+							 		{{form_widget(form.telefonoFijo)}}
+							 	</td>
+							 </tr>
+							 <tr>
+							 	<td>
+							 		Teléfono celular::
+							 	</td>
+							 	<td>
+							 		{{form_widget(form.telefonoCelular)}}
+							 	</td>
+							 </tr>
+							 <tr>
+							 	<td>
+							 		Razón social:
+							 	</td>
+							 	<td>
+							 		{{form_widget(form.razonSocial)}}
+							 	</td>
+							 </tr>
+							  <tr>
+							 	<td>
+							 		Departamento:
+							 	</td>
+							 	<td>
+							 		 <select onchange="ActualizarDepartamento()" id="departamentos">
+							 		 	  <option selected value=0> Seleccione un departamento </option>
+										{% for user in departamentos %}				       
+								 				 <option value={{user.id}}>{{ user.nombre }}</option>
+									    {% endfor %}
+									</select>
+
+							 		
+							 	</td>
+							 </tr>
+							 <tr>
+							 	<td>
+							 		Ciudad:
+							 	</td>
+							 	<td>
+								 	<select  id="ciudad" required>
+								 		<option selected value=0> Seleccione un departamento </option>
+								 		
+								 	</select>
+							 	</td>
+							 </tr>
+							 <tr>
+							 	<td>
+							 		Cedula:
+							 	</td>
+							 	<td>
+							 		{{form_widget(form.cedula)}}
+							 	</td>
+							 </tr>
+
+
+						</table>
+
+						 {{ form_widget(form.Guardar) }}
+					{{form_end(form)}}
+
+</form>
+<input type="hidden" id="UrlAjax" value={{path('colpatriafolmulario_comprobarnit')}}>												
+<input type="hidden" id="UrlAjaxMunicipio" value={{path('colpatriafolmulario_municipios')}}>
+
+
+
+	
+
+
+
+
+	{% endblock %}
+ 
+  	{% block stylesheets %}
+		 <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
+		 <link rel="stylesheet" href="{{asset('css/bootstrap-theme.min.css')}}">
+		 <script src="{{asset('JavaScript/Script.js')}}"></script>
+		 <script src="{{asset('JavaScript/jquery-1.11.3.min.js')}}"></script>
+		 
+
+	{% endblock %}

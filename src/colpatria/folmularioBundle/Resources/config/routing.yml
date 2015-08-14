@@ -1,0 +1,25 @@
+colpatriafolmulario_homepage:
+    path:     /hello
+    defaults: { _controller: colpatriafolmularioBundle:Default:index }
+
+
+colpatriafolmulario_formulario:
+    path:     /formulario
+    defaults: { _controller: colpatriafolmularioBundle:Default:formulario }    
+
+
+colpatriafolmulario_formularionew:
+    path:     /formularionew
+    defaults: { _controller: colpatriafolmularioBundle:Default:NuevoRegistroFormulario }    
+
+colpatriafolmulario_registroformulario:
+    path:     /registroformulario
+    defaults: { _controller: colpatriafolmularioBundle:Default:RegistroFormulario}
+
+colpatriafolmulario_comprobarnit:
+    path:     /comprobarnit
+    defaults: { _controller: colpatriafolmularioBundle:Default:Comprobarnit}
+
+colpatriafolmulario_municipios:
+    path:     /municipios
+    defaults: { _controller: colpatriafolmularioBundle:Default:Municipios}

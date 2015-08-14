@@ -1,0 +1,53 @@
+colpatria\folmularioBundle\Entity\Formulario:
+    type: entity
+    table: null
+    repositoryClass: colpatria\folmularioBundle\Entity\FormularioRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        nit:
+            type: integer
+            column: nit
+        primerNombre:
+            type: string
+            length: 255
+            column: primer_nombre
+        primerApellido:
+            type: string
+            length: 255
+            column: primer_apellido
+        segundoNombre:
+            type: string
+            length: 255
+            column: segundo_nombre
+        segundoApellido:
+            type: string
+            length: 255
+            column: segundo_apellido
+        telefonoFijo:
+            type: string
+            length: 255
+            column: telefono_fijo
+        telefonoCelular:
+            type: string
+            length: 20
+            column: telefono_celular
+        razonSocial:
+            type: string
+            length: 255
+            column: razon_social
+        departamento:
+            type: integer            
+            column: departamento
+        ciudad:
+            type: integer            
+            column: ciudad
+        cedula:
+            type: integer            
+            column: cedula
+
+    lifecycleCallbacks: {  }

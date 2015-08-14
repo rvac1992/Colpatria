@@ -1,0 +1,15 @@
+colpatria\folmularioBundle\Entity\departamento:
+    type: entity
+    table: null
+    repositoryClass: colpatria\folmularioBundle\Entity\departamentoRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        nombre:
+            type: string
+            length: 255
+    lifecycleCallbacks: {  }

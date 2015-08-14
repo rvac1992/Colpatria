@@ -1,0 +1,18 @@
+colpatria\folmularioBundle\Entity\municipio:
+    type: entity
+    table: null
+    repositoryClass: colpatria\folmularioBundle\Entity\municipioRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        nombreMunicipio:
+            type: string
+            length: 255
+        departamentoIddepartamento:
+            type: integer
+            column: departamento_iddepartamento
+    lifecycleCallbacks: {  }
