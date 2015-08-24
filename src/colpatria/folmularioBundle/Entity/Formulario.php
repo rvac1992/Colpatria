@@ -97,6 +97,14 @@ class Formulario
      * @ORM\Column(name="cedula", type="integer")
      */
     private $cedula;
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="direccion_empresa", type="string", length=255)
+     */
+    private $direccionEmpresa;
+
+
 
 
     /**
@@ -360,5 +368,28 @@ class Formulario
     public function getCedula()
     {
         return $this->cedula;
+    }
+
+     /**
+     * Get direccionEmpresa
+     *
+     * @return string 
+     */
+    public function getDireccionEmpresa()
+    {
+        return $this->direccionEmpresa;
+    }
+
+    /**
+     * Set direccionEmpresa
+     *
+     * @param string $direccionEmpresa
+     * @return Formulario
+     */
+    public function setDireccionEmpresa($direccionEmpresa)
+    {
+        $this->direccionEmpresa = $direccionEmpresa;
+
+        return $this;
     }
 }

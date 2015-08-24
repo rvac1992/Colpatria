@@ -7,6 +7,9 @@
 	{{form_start(form)}}
 	
 
+
+
+
  <form id="flogin" method="post" action="javascript:ComprobarPyme()">
 				<table class='table table-bordered'>
 							 <tr id="trNit">
@@ -15,6 +18,22 @@
 							 	</td>
 							 	<td>
 							 		{{form_widget(form.nit)}}
+							 	</td>
+							 </tr>							 
+ 							 <tr>
+							 	<td>
+							 		Direccion Emprersa:
+							 	</td>
+							 	<td>
+							 		{{form_widget(form.direccionEmpresa)}}
+							 	</td>
+							 </tr>
+							 <tr>
+							 	<td>
+							 		Cedula:
+							 	</td>
+							 	<td>
+							 		{{form_widget(form.cedula)}}
 							 	</td>
 							 </tr>
 							 <tr>
@@ -28,15 +47,6 @@
 							 </tr>
 							 <tr>
 							 	<td>
-							 		Primer apellido:
-							 	</td>
-							 	<td>
-							 		{{form_widget(form.primerApellido)}}
-							 	</td>
-
-							 </tr>
-							 <tr>
-							 	<td>
 							 		Segundo nombre:
 							 	</td>
 							 	<td>
@@ -44,6 +54,16 @@
 							 	</td>
 
 							 </tr>
+							 <tr>
+							 	<td>
+							 		Primer apellido:
+							 	</td>
+							 	<td>
+							 		{{form_widget(form.primerApellido)}}
+							 	</td>
+
+							 </tr>
+
 							 <tr>
 							 	<td>
 							 		Segundo apellido:
@@ -81,8 +101,8 @@
 							 		Departamento:
 							 	</td>
 							 	<td>
-							 		 <select onchange="ActualizarDepartamento()" id="departamentos">
-							 		 	  <option selected value=0> Seleccione un departamento </option>
+							 		 <select onchange="ActualizarDepartamento()" id="departamentos" required>
+							 		 	  <option selected value=""> Seleccione un departamento </option>
 										{% for user in departamentos %}				       
 								 				 <option value={{user.id}}>{{ user.nombre }}</option>
 									    {% endfor %}
@@ -97,19 +117,12 @@
 							 	</td>
 							 	<td>
 								 	<select  id="ciudad" required>
-								 		<option selected value=0> Seleccione un departamento </option>
+								 		<option selected > Seleccione un departamento </option>
 								 		
 								 	</select>
 							 	</td>
 							 </tr>
-							 <tr>
-							 	<td>
-							 		Cedula:
-							 	</td>
-							 	<td>
-							 		{{form_widget(form.cedula)}}
-							 	</td>
-							 </tr>
+	
 
 
 						</table>

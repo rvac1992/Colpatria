@@ -27,7 +27,8 @@ class FormularioType extends AbstractType
             ->add('departamento','hidden',array("required"=>true,'attr' =>array( 'class' => 'form-control'))) 
             ->add('ciudad','hidden',array("required"=>true,'attr' =>array( 'class' => 'form-control')))
             ->add('cedula','text',array("required"=>true,'attr' =>array( 'class' => 'form-control')))
-            ->add('Guardar','submit',array('attr' =>array('class'=>'btn btn-default')));
+            ->add('direccionEmpresa','text',array("required"=>true,'attr' =>array( 'class' => 'form-control')))
+            ->add('Guardar','submit',array('attr' =>array('class'=>'btn btn-default','onclick'=>'return  comprobarForm()')));
     }
     
     /**

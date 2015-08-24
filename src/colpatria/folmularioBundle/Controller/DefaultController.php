@@ -31,7 +31,7 @@ class DefaultController extends Controller
         return $this->render('colpatriafolmularioBundle:Default:formulario.html.twig',compact("municipios"));
     }
 
-
+    //regimstrar un nuevo registro del formulario
     public function RegistroFormularioAction(Request $request)
     {
        
@@ -100,7 +100,7 @@ class DefaultController extends Controller
     public function NuevoRegistroFormularioAction(Request $request){
         
     }
-
+        //funcion ajax pata comprobar si ya se encuentra registrado el nit.
     public function ComprobarnitAction(){
       $nit =$_POST['nitForm']; 
 

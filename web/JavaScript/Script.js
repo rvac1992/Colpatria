@@ -1,9 +1,9 @@
 var nit=false;
-
+var swnit=false;
 function myFunction(){
         //obtener el nit de la vista 
         var nit= $('#colpatria_folmulariobundle_formulario_nit').val(); 
-        alert("enton a comprobar el usuario= "+nit);
+        //alert("enton a comprobar el usuario= "+nit);
        // $.ajax('{{path('+colpatriafolmulario_comprobarnit+')}}',{data1: 'mydata1', data2:'mydata2'},function(response){if(response.code == 100 && response.success){}}, "json");  
       
       if(nit.length){
@@ -19,16 +19,16 @@ function myFunction(){
           
            //alert("CASEA= "+data['Validacion']);
             if(data['Validacion']==true){
-              alert("Nit ya existe");
-              nit=false;
+              alert("NIT introducido ya existe");
+              swnit=false;
               $('#trNit').removeClass();
               $('#trNit').addClass("alert alert-danger");
 
             }else{
-              alert("Nit Valido");
+             // alert("Nit Valido");
               $('#trNit').removeClass();
               $('#trNit').addClass("alert alert-success");
-              nit=true;
+              swnit=true;
             }
           }
          });    
@@ -41,9 +41,10 @@ function myFunction(){
 function ActualizarDepartamento(){
    var  idDepartamento= $('#departamentos').val(); 
    if(idDepartamento!=0){
-    alert("Entra");
+    var ciudadSelect=$('#ciudad option');
+    ciudadSelect.remove();
     var url=$('#UrlAjaxMunicipio').val();
-    alert("La url Es "+url);
+    //alert("La url Es "+url);
     $.ajax({
       type:"POST",
       dataType: "json",
@@ -51,15 +52,9 @@ function ActualizarDepartamento(){
       data: {idDepa: idDepartamento},
       success: function(data){      
           //alert(data['nombres']);
-          var ciudadSelect=$('#ciudad option');
+        
           ciudadSelect.remove();
-          
-
-
-
-
-
-        //  alert("1 ..."+data['nombes'][1]);
+          //  alert("1 ..."+data['nombes'][1]);
            $('#ciudad').append($('<option>',{
             value: "",
             text:  "Selecione una Ciudad"
@@ -83,10 +78,29 @@ function ActualizarDepartamento(){
 
 
    }else{
-    alert("No entra");
+    $('#ciudad option').remove();
+          //  alert("1 ..."+data['nombes'][1]);
+           $('#ciudad').append($('<option>',{
+            value: "",
+            text:  "Selecione una Ciudad"
+    }));
+
    }
 
    //alert("enton a mirar los municipios = "+idDepartamento);
 
 }
-     
+function comprobarForm(){
+
+  
+  if(swnit){
+    $('#colpatria_folmulariobundle_formulario_departamento').val($('#departamentos').val());
+    $('#colpatria_folmulariobundle_formulario_ciudad').val($('#ciudad').val());
+    return true;
+  }else{
+      alert("El NIT introducido NO es validacion");
+      return false;
+  }  
+}
+//colpatria_folmulariobundle_formulario_departamento   
+//colpatria_folmulariobundle_formulario_ciudad

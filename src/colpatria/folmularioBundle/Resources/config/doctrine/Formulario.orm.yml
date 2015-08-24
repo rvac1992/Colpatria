@@ -49,5 +49,9 @@ colpatria\folmularioBundle\Entity\Formulario:
         cedula:
             type: integer            
             column: cedula
+        direccionEmpresa:
+            type: string
+            length: 255
+            column: direccion_empresa
 
     lifecycleCallbacks: {  }
